@@ -43,11 +43,11 @@ twiceLong <- function(s1, s2) {
    l2 <- nchar(s2)
    if(l1 < l2) {
       ## s1 is shorter: the difference must be equal to l1
-      return(l2 - l1 == l1)
+      return(l2 - l1 >= l1)
    }
    ## that was not true: hence l2 shorter, the difference mus
    ## equal to l2
-   return(l1 - l2 == l2)
+   return(l1 - l2 >= l2)
 }
 
 
@@ -58,6 +58,7 @@ twiceLong("abc", "aaggdd")
 twiceLong("abc", "aaggd")
 twiceLong("aaggd", "abc")
 twiceLong("aaggdd", "abc")
+twiceLong("aaggdd", "ab")
 
 
 
