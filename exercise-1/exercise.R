@@ -10,8 +10,10 @@ ten <- AddThree(7)
 
 ## Write a function `FeetToMeters` that converts from feet to meters
 ## 
-## Note: if you come with metric background, you may want to do the following three questions
-## in the opposite way: create function 'metersToFeet' and compute you height in feet below
+## Note: if you come with metric background, you may want to do the
+## following three questions
+## in the opposite way: create function 'metersToFeet' and compute
+## your height in feet below
 FeetToMeters <- function(feet) {
   return (feet * 0.3048)
 }
@@ -24,13 +26,11 @@ height.in.meters <- FeetToMeters(height.in.feet)
 
 ## ------------------------------ challenge ------------------------------
 ## create a function that converts height from meters to feet and inches
-MetersToFeetAndInch <- function (meters) {
-  feet <- meters * 3.28084
-  inches <- (feet * 12) %% 12
-  final <- paste(as.character(floor(feet)), "feet", as.character(format(round(inches,2))), "inches")
+## Hint: use operators %% (modulo) and %/% (integer division)
+meters2FeetInch <- function (meters) {
+   feet <- meters %/% 0.3048
+   inches <- meters %/% 0.0254
+   inches <- inches %% 12
+  final <- paste(feet, "'", inches, '"')
   return(final)
 }
-
-
-
-
